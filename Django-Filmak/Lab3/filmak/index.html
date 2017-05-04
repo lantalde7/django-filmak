@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+  <title>{% block title %}Filmen lista{% endblock %}</title>
+</head>
+<body>
+<form action="{{django.views.bozkatu}}" method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+<table class="w3-table w3-lime">
+	<tr class="w3-green">
+  <th>Filma</th>
+  <th>Filma Bozkak</th>
+  <th>Hautatu</th>
+
+</tr>
+	{% if filmak_list %}
+    
+    {% for filmak in filmak_list%}
+    <tr>
+        <td><a href="{{ filmak.id }}/">{{ filmak.izenburua}}</a></td>
+        <td>{{filmak.bozkak}}</td>
+        <td><label><input type="checkbox" id="{{filmak.id}}" name="fl"> </label></td> 
+        </tr>
+    {% endfor %}
+    <tr>
+        <input type="submit" value="Gorde"> 
+    </tr>
+
+
+{% else %}
+    <p>Filma ez dago erabilgarri.</p>
+{% endif %}
+
+
+
+</table></form>
+    <a href="{{filmak.views.logout_bista}}">Logout</a></body>

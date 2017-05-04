@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+  <title>{% block title %}Filmen lista{% endblock %}</title>
+</head>
+<body>
+<form action="/filmak/bozkatuta/" method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+<table class="w3-table w3-card w3-stripped">
+	<tr class="w3-green">
+  <th>Filma</th>
+  <th>Filma Bozkak</th>
+
+  <th>Hautatu</th>
+
+</tr>
+
+    
+    {% for filmak in filmak_lista%}
+    <tr>
+        <td><a href="{{ filmak.id }}/">{{ filmak.izenburua}}</a></td>
+        <td><a href="/filmak/bozkatzaileak/{{filmak.id}}">{{filmak.bozkak}}</a></td>
+      
+        <td><label><input class="w3-checkbox" type="checkbox" value="{{filmak.id}}"  name="fl"> </label></td> 
+        </tr>
+    {% endfor %}
+    <tr>
+      <td></td>
+      
+               <td></td><td >
+        <div><input class="w3-blue w3-input" type="submit" value="Gorde"></div>
+         </td>
+    </tr>
+    
+</table>
+</form>
+     <div><span><a href="/filmak/logout">Logout</a></span></div>
+  </body>
+  </html>

@@ -1,0 +1,8 @@
+{% if bozkatzaile_id %}
+    <ol>
+    {% for filmak in filmak.gogoko_filmak%}
+<li>{{bozkatzaileak.get(pk=bozkatzaile_id).username}}</li>
+    {% else %}
+    <p>Filma ez dago erabilgarri.</p>
+</ol>
+{% endif %}

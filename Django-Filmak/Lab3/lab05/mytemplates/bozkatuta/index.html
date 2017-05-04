@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+  <title>{% block title %}Filmen lista{% endblock %}</title>
+</head>
+<body>
+
+<table class="w3-table w3-lime">
+	<tr class="w3-green">
+  <th>Bozkatutako filmak</th>
+  <th>Filma bozka kopuru berria</th>
+
+
+</tr>
+
+    
+    {% for filmak in bozka_lista%}
+    <tr>
+        <td><a href="{{ filmak.id }}/">{{ filmak.izenburua}}</a></td>
+        <td><a href="/filmak/bozkatzaileak/{{filmak.id}}/">{{filmak.bozkak}}</td>
+
+        </tr>
+    {% endfor %}
+
+
+</table>
+
+<a href="/filmak/logged">Bozkatu berriro</a>
+<a href="/filmak/logout">Logout</a>

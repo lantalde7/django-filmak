@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+	<title>{% block title %}Filmaren zehaztasunak{% endblock %}</title>
+</head>
+
+<body>
+	<div class="w3-bar w3-large w3-theme-d4">
+		<a href="/filmak" class="w3-bar-item w3-button">Filmen lista<i class="fa fa-bars"></i></a>
+		<span class="w3-bar-item"></span>
+		<a href="#" class="w3-bar-item w3-button w3-right"><i class="fa fa-search"></i></a>
+	</div>
+
+	<div id="content">
+		<table class="w3-table w3-lime">
+			<tr>
+				<th class="w3-green">
+					Izenburua:{{ filma.izenburua }}
+				</th>
+			</tr>
+			<tr>
+				<th>Zuzendaria</th>
+				<th>Urtea</th>
+				<th>Generoa</th>
+
+				<th>Sinopsia</th>
+				<th>Bozkak</th>
+			</tr>
+			<tr>
+				<td>{{ filma.zuzendaria}}</td>
+				<td>{{ filma.urtea}}</td>
+				<td>{{ filma.generoa}}</td>
+				<td>{{ filma.sinopsia}}</td>
+				<td>{{ filma.bozkak}}</td>
+			</tr>
+		</table>
+
+
+	</div>
+</body>
+</html>
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+

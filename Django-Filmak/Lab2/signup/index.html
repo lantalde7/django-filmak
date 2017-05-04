@@ -1,0 +1,33 @@
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+</head>
+
+
+{% block main %}
+    <div class="w3-card-2 w3-round w3-margin" id="signup">
+
+        <form class="w3-container" name="SignUpForm" action="{{filmak.sortu_erabiltzailea}}" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <header class="w3-container w3-blue w3-margin-top w3-margin-bottom">
+  <h1>Signup</h1>
+</header>
+        <div>
+            <label  for="username">Aukeratu erabiltzailea izena</label>
+            <div class="controls">
+                <input class="w3-input w3-theme-d1" type="text" id="username" name="username"  placeholder="Sartu hemen erabiltzaile izena...">
+            </div>
+        </div>
+        <div >
+            <label for="password">Aukeratu pasahitza</label>
+            <div class="controls">
+                <input class="w3-input w3-theme-d1" type="password" name="password" id="password" placeholder="Sartu hemen pasahitza...">
+            </div>
+        </div>
+        <div >
+            <div class="controls">
+                <input type="submit" class="w3-btn w3-blue w3-margin" value="Gorde"></input>
+            </div>
+        </div>
+        </form>
+    </div>
+{% endblock %}
